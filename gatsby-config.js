@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `이하늘 기술 블로그🐱‍🏍`,
-    description: `저의 개발 경험과 지식을 보관하는 블로그입니다.`,
+    title: `le2sky' tech blog🐱‍🏍`,
+    description: `저의 경험과 지식을 보관하는 블로그입니다😎`,
     author: `le2sky`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    siteUrl: `https://le2sky.github.io/`,
   },
   plugins: [
     {
