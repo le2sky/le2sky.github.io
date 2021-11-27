@@ -121,9 +121,9 @@ export const getPostList = graphql`
                 }
             }
         }
-        file(name: {eq: "profile-image"}) {
+        file(name: {eq: "Profile-image"}) {
             childImageSharp {
-                gatsbyImageData(width: 270, height: 270)
+                gatsbyImageData(width: 200, height: 200)
             }
             publicURL
         }

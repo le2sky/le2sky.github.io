@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `le2sky' tech blog🐱‍🏍`,
-    description: `저의 경험과 지식을 보관하는 블로그입니다😎`,
+    title: `le2sky' tech blog🚀`,
+    description: `저의 경험과 지식을 보관하는 블로그입니다👀`,
     author: `le2sky`,
     siteUrl: `https://le2sky.github.io/`,
   },

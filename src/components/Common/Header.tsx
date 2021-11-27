@@ -21,7 +21,7 @@ import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import { Button, IconButton } from "@mui/material";
+import { Button, Card, CardContent, IconButton, Typography } from "@mui/material";
 import Snackbar from '@mui/material/Snackbar';
 import Slide from '@mui/material/Slide';
 import { Link } from "gatsby";
@@ -84,6 +84,22 @@ const Header: FunctionComponent = () => {
             sx={{ width: 250 }}
             role="presentation"
         >
+            <Card sx={{ minWidth: 275 }}>
+                <CardContent>
+                    <Typography variant="h6" component="div">
+                        le2sky's tech blog🚀
+                    </Typography>
+                    <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+                        1999.06.23 🐰
+                    </Typography>
+                    <br />
+                    <Typography sx={{ fontSize: 12 }} variant="body2">
+                        "개발과 운동을 좋아하는 이하늘입니다."<br />
+                        백엔드 개발자가 되기 위해서 <br />
+                        학습 중입니다.💻
+                    </Typography>
+                </CardContent>
+            </Card>
             <List>
                 {['블로그 소개', '게시글'].map((text, index) => (
                     <ListItem button key={text} component={Link} to={index === 0 ? "/info" : ""}>
