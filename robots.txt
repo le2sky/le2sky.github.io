@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://le2sky.github.io/sitemap/sitemap-index.xml
+Host: https://le2sky.github.io
