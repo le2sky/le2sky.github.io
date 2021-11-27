@@ -36,6 +36,7 @@ function TransitionUp(props: any) {
 const HeaderWrapper = styled.header`
     display: flex;
     flex-direction: row;
+
 `
 const LinkWrapper = styled.div`
     margin-left: auto;
