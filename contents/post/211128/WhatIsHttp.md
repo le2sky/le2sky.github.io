@@ -1,7 +1,7 @@
 ---
 date: '2021-11-28'
 title: 'HTTP 프로토콜(1)'
-categories: ['BACKEND', 'HTTP', 'PROTOCOL']
+categories: ['Backend', 'HTTP', 'Protocol']
 summary: 'HTTP 프로토콜에 대해서 알아보자!'
 thumbnail: './httpThumnail.png'
 ---
@@ -82,7 +82,7 @@ Content-Type: text/html
 **2. Origin 제약사항 완화하기**: <br>
 스누핑과 다른 프라이버시 침해를 막기 위해, 브라우저는 웹 사이트 간의 엄격한 분리를 강제한다. 이걸 동일 출처 정책(Same Origin Policy) 정책이라고 부른다.
 예를 들어 'https://le2sky.github.io' 에서 받은 페이지가 'https://naver.com' 에서 받아온 페이지 상의 정보에 접근해 중요한 개인정보를 훔치는 걸 막을 수 있다.
-만약 두 페이지가 데이터를 교환하려면, 서로 동의해야합니다. 동일 출처 정책은 서버에 부담을 줍니다. 하지만 HTTP 헤더를 통해 이것을 완화 할 수 있습니다.
+만약 두 페이지가 데이터를 교환하려면, 서로 동의해야한다. 동일 출처 정책은 서버에 부담을 준다. 하지만 HTTP 헤더를 통해 이것을 완화 할 수 있다.
 <br>
 <br>
 

@@ -1,7 +1,7 @@
 ---
 date: '2021-11-29'
 title: 'HTTP 프로토콜(2)'
-categories: ['BACKEND', 'HTTP', 'PROTOCOL']
+categories: ['Backend', 'HTTP', 'Protocol']
 summary: 'HTTP 프로토콜 메시지에 대해 알아보자!'
 thumbnail: './httpThumnail.png'
 ---
