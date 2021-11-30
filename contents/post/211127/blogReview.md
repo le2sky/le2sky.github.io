@@ -15,7 +15,7 @@ JAM Stack은 Javascript, API, MarkUp stack 의 약자로, 자바스크립트와 
 
 #### 1-1 JAM Stack 절차
 
-1. 각 마크업 요소와 다양한 api를 통해 만든 정적 웹 사이트(Pro-Render한 Static한 사이트)를 만든다.
+1. 각 마크업 요소와 다양한 api를 통해 만든 정적 웹 사이트(Pre-Render한 Static한 사이트)를 만든다.
 2. CDN(Content Delivery Network)를 통해 제공한다.
 
 #### 1-1 JAM Stack 장점
