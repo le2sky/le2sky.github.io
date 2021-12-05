@@ -2,7 +2,7 @@
 date: '2021-12-04'
 title: 'Typescript 기본기 다지기(6)'
 categories: ['Typescript']
-summary: 'Typescript에서 namespace에 대해 알아보자!'
+summary: 'Typescript namespace에 대해 알아보자!'
 thumbnail: './typescript.png'
 ---
 

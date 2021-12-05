@@ -2,7 +2,7 @@
 date: '2021-12-03'
 title: 'Typescript 기본기 다지기(5)'
 categories: ['Typescript']
-summary: 'Typescript에서 class에 대해 알아보자!'
+summary: 'Typescript class에 대해 알아보자!'
 thumbnail: './typescript.png'
 ---
 
