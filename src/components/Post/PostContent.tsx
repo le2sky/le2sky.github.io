@@ -83,23 +83,6 @@ const MarkdownRenderer = styled.div`
     text-decoration: underline;
   }
 
-  // Adjust Code Style
-  pre[class*='language-'] {
-    margin: 30px 0;
-    padding: 15px;
-    font-size: 15px;
-
-    ::-webkit-scrollbar-thumb {
-      background: rgba(255, 255, 255, 0.5);
-      border-radius: 3px;
-    }
-  }
-
-  code[class*='language-'],
-  pre[class*='language-'] {
-    tab-size: 2;
-  }
-
   // Markdown Responsive Design
   @media (max-width: 768px) {
     width: 100%;

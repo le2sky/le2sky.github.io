@@ -242,6 +242,8 @@ let user = new User()
 user.name = 'kimsky!' //error!
 ```
 
+<br>
+
 #### 참고
 
 - [Typescript 가이드북](https://yamoo9.gitbook.io/typescript/)

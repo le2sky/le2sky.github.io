@@ -23,7 +23,7 @@ HTTP 메시지는 서버와 클라이언트 간에 데이터가 교환되는 방
 - **Path:** 요청 경로
 - **Version of the protocol:** 프로토콜 버전
 - **Headers:** 서버에 대한 추가 정보를 전달하는 헤더
-  - 헤더는 General 헤더(메시지 전체 적용 내용), Request 헤더(요청의 내용을 좀 더 구체화), Entify 헤더(요청 본문에 적용)로 나누어져 있으며
+  - 헤더는 General 헤더(메시지 전체 적용 내용), Request 헤더(요청의 내용을 좀 더 구체화), Entity 헤더(요청 본문에 적용)로 나누어져 있으며
     본문은 요청의 마지막 부분에 존재한다.(POST 등과 같은 데이터를 전달하는 과정에 본문을 추가) 본문의 종류는 단일 리소스 본문, 다중 리소스 본문이 있다
 
 #### 2. 응답
@@ -39,7 +39,7 @@ HTTP 메시지는 서버와 클라이언트 간에 데이터가 교환되는 방
   - Server error responses(500-599)
     - [더욱 자세한 status 설명🚀](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
 - **Status message:** 상태 코드에 대한 짧은 설명
-- **Headers:** 요청 헤더와 비슷함 (General 헤더, Response 헤더, Entift 헤더로 이루어짐 \*Response 헤더에는 상태 줄에 미처 들어가지 못한 서버에 대한 추가 정보를 제공)
+- **Headers:** 요청 헤더와 비슷함 (General 헤더, Response 헤더, Entity 헤더로 이루어짐 \*Response 헤더에는 상태 줄에 미처 들어가지 못한 서버에 대한 추가 정보를 제공)
   - 본문은 응답의 마지막 부분에 존재한다. 응답 메시지의 본문에는 세가지 종류가 있다
     - 이미 길이가 알려진 단일 파일로 구성된 단일 리소스 본문
     - 길이를 모르는 단일 파일로 구성된 단일 리소스 본문

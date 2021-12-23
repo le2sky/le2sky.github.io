@@ -52,6 +52,7 @@ let user: IUser = {
 }
 ```
 
+<br>
 위 예시와 같이 객체 리터럴에 인터페이스를 설정해줄 경우 에러가 난다. 그 이유는 인터페이스에 정의되지
 않은 동적 타입이 할당되는 것을 Typescript는 기본적으로 오류로 보기 떄문이다.
 
@@ -88,6 +89,7 @@ const sumwithInterface: SumInterface = (a, b) => {
 }
 ```
 
+<br>
 주의할 점은 인터페이스가 설정된 함수의 매개변수, 리턴 값 타입을 임의로 변경하면 오류가 발생한다.
 
 ```ts
@@ -124,6 +126,7 @@ interface CounterButtonInterface extends ButtonInterface {
 }
 ```
 
+<br>
 2개 이상의 인터페이스를 확장하는 인터페이스 구현이 가능하다. ,(콤마) 를 사용하여 다중 확장 설정이 가능하다.
 
 ```ts
@@ -148,6 +151,7 @@ interface ImageButtonInterface extends ButtonInterface, ButtonSizeInterface {
 }
 ```
 
+<br>
 인터페이스를 확장한 클래스는 인터페이스에 정의된 준수사항을 따라 구현해야 한다. 콤마를 이용하여 다중 인터페이스 확장도 가능하다.
 또한 클래스 방식이 아닌 객체 리터럴 방식으로 객체를 사용하고자 할 경우, 객체를 할당 받을 변수에 인터페이스를 설정할 수 있다.
 이 때 인터페이스에 정의된 준수 사항을 따르지 않을 경우 오류가 난다. (위 인덱스 시그니처 속성 참고)
@@ -174,6 +178,8 @@ let studentB = <StudentInterface>{
 }
 console.log(studentB) //good!
 ```
+
+<br>
 
 #### 참고
 

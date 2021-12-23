@@ -12,8 +12,13 @@ thumbnail: './typescript.png'
 개발 확장 할 수 있고, 연결도 가능하다. 연결은 예를 들어 CoustomMath 라는 네임스페이스를 여러개 만들 었다면, 번들링을 통해서, 하나의 파일로 만든 다음에
 사용 가능하다.
 
-`# tsc --outFile <생성할 파일.js> [<namespace 파일 1>, <namespace 파일 2>, ...]`
+<br>
 
+```
+# tsc --outFile <생성할 파일.js> [<namespace 파일 1>, <namespace 파일 2>, ...]
+```
+
+<br>
 어플리케이션을 만들 때, 함수나 컴포넌트 단위로 모듈화하고 번들링하는게 통상적으로 이용되는 방법이다. 이를 구현하기 위해서 Typescript는 namespace를 제공하고 추가적으로 es6 import, export를 통해 모듈을 구성할 수 있다.
 
 ### 2. namespace 구현
@@ -38,6 +43,7 @@ alert(MyCustomMath.PI) // error!
 alert(MyCustomMath.sum(3, 2)) // good!
 ```
 
+<br>
 또한 네임스페이스는 중첩으로 사용 가능하다.
 
 ```ts
@@ -76,6 +82,7 @@ export function sayHi(): void {
 }
 ```
 
+<br>
 모듈에 대해서 더욱 자세하게 알아보고 싶으면 아래 글을 한번 읽어보는 걸
 추천한다.
 

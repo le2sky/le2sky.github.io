@@ -116,6 +116,8 @@ enum Family {
 let leesky: number = Family.Leesky //(enum member) Family.Leesky = 3
 ```
 
+<br>
+
 **값을 직접 설정할 수도 있음! 단 값이 할당되지 않은 아이템은 이전 아이템
 값 + 1된 값이 설정됨!!!**
 
@@ -128,11 +130,15 @@ enum Family {
 }
 ```
 
+<br>
+
 **숫자값을 통해서 enum 멤버 이름을 도출가능함!!**
 
 ```ts
 let whatIsMyname: string = Family[6] // 'Leesky'
 ```
+
+<br>
 
 #### 참고
 

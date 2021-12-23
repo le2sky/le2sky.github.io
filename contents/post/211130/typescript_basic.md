@@ -59,6 +59,8 @@ name = 'leesky' // 암거나 떄려들감!
 name = 23
 ```
 
+<br>
+
 #### 2.2 명시적 타입 설정
 
 Typescript는 변수를 선언할 때 명시적으로 할당할 수 있다. Typescript는 Javascript으 슈퍼셋이므로 Javascript의 타입 뿐아니라 클래스, 인터페이스 등을 타입으로 설정 가능하다.
@@ -86,6 +88,8 @@ Typescript는 변수를 선언할 때 명시적으로 할당할 수 있다. Type
 let name: string = 'leesky'
 let age: number = 23
 ```
+
+<br>
 
 #### 참고
 

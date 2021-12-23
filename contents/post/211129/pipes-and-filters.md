@@ -1,8 +1,8 @@
 ---
 date: '2021-11-29'
-title: 'Pipes-and-Filters 디자인 패턴'
-categories: ['Backend', 'Nest', '디자인 패턴']
-summary: 'NestJs를 통해 파이프-필터 패턴에 대해 알아보기!'
+title: 'Pipes-and-Filters 패턴'
+categories: ['Backend', 'Nest', '아키텍쳐 패턴']
+summary: 'pipes-and-filters 패턴에 대해 알아보자!'
 thumbnail: './nest.png'
 ---
 
@@ -36,22 +36,25 @@ thumbnail: './nest.png'
 
 > 위 그림을 보면 TASK A 필터와 TASK B 필터가 병렬구성되어 시스템 부하 및 처리량을 개선하고 있다.(파이프-필터 로드 밸런싱이라고 함)
 
-### 3. NestJS에서 구현하기
+### 3. NestJS에서는?🙄
 
-> 파이프는 @Injectable() 데코레이터로 주석이 달린 클래스다. 파이프는 >PipeTransform 인터페이스를 구현해야 한다.
+nest에서는 위와 같은 구조에서 영감을 받아 파이프라는 걸 생각해낸 것 같다.
+
+> 파이프는 @Injectable() 데코레이터로 주석이 달린 클래스다. 파이프는 PipeTransform 인터페이스를 구현해야 한다.
 
 ```ts
 @Injectable()
 export class MyTestPipe implements PipeTransform {
   transform(value: number) {
-    //트랜스 폼의 반환 값이 파이프라인의 반환값
-    // task A 필터 처리.... task B 필터처리 => value 리턴
+    //.....
     return value
   }
 }
 ```
 
+<br>
 위와 같이 파이프가 데이터를 받아서 값을 변환하거나, 유효성 검사하여 비즈니스 로직에 전달한다.
+<br><br>
 
 ```ts
 @Controller('/test')
@@ -64,7 +67,9 @@ export class testController {
 }
 ```
 
+<br>
 ParseIntPipe -> MyTestPipe 순서로 전달된다. ParseIntPipe는 Nest에서 기본적으로 제공하는 파이프인데, ParseIntPipe 포함 총 6가지가 있다.
+<br><br>
 
 #### 참고
 

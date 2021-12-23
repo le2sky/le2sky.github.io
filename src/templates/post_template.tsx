@@ -1,13 +1,13 @@
-import React, { FunctionComponent } from "react";
-import PostHead from "components/Post/PostHead";
-import Template from "../components/Common/Template";
-import { PostPageItemType } from "types/PostItem.types";
+import React, { FunctionComponent } from 'react'
+import PostHead from 'components/Post/PostHead'
+import Template from '../components/Common/Template'
+import { PostPageItemType } from 'types/PostItem.types'
 import { graphql } from 'gatsby'
-import PostContent from "components/Post/PostContent";
+import PostContent from 'components/Post/PostContent'
 //import { Box } from "@mui/system";
-import CommentWidget from "components/Post/CommentWidget";
+import CommentWidget from 'components/Post/CommentWidget'
 
-
+import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader'
 
 type PostTemplateProps = {
   data: {
@@ -18,15 +18,15 @@ type PostTemplateProps = {
   location: {
     href: string
   }
-};
-
+}
 
 const PostTemplate: FunctionComponent<PostTemplateProps> = function ({
   data: {
     allMarkdownRemark: { edges },
   },
-  location: { href }
+  location: { href },
 }) {
+  deckDeckGoHighlightElement()
   const {
     node: {
       html,

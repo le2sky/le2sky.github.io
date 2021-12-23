@@ -18,6 +18,7 @@ interface ButtonInterface {
 }
 ```
 
+<br>
 사용자 정의 타입과 비슷해보이지만, 인터페이스는 더욱 많은 걸 할 수 있게 해준다.
 그 중 하나는 인터페이스 선언 병합이다.
 
@@ -123,6 +124,8 @@ class ButtonCompnent implements ButtonInterface {
   }
 }
 ```
+
+<br>
 
 #### 참고
 

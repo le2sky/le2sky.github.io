@@ -51,6 +51,8 @@ Host: developer.mozilla.org
 Accept-Language: fr
 ```
 
+<br>
+
 **3. 서버에 의해 전송된 응답을 읽는다.**
 
 ```http
@@ -64,6 +66,8 @@ Content-Length: 29769
 Content-Type: text/html
 <!DOCTYPE html... (here comes the 29769 bytes of the requested web page)
 ```
+
+<br>
 
 **4. 연결을 닫거나 다른 요청들을 위해 재사용한다.**
 

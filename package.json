@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "le2sky <le2sky@kakap.com>",
   "dependencies": {
+    "@deckdeckgo/highlight-code": "^3.6.0",
     "@emotion/react": "^11.6.0",
     "@emotion/styled": "^11.6.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
@@ -25,6 +26,7 @@
     "gatsby-plugin-typescript": "^4.1.0",
     "gatsby-remark-copy-linked-files": "^5.2.0",
     "gatsby-remark-external-links": "0.0.4",
+    "gatsby-remark-highlight-code": "^3.1.0",
     "gatsby-remark-images": "^6.2.0",
     "gatsby-remark-prismjs": "^6.2.0",
     "gatsby-remark-smartypants": "^5.2.0",

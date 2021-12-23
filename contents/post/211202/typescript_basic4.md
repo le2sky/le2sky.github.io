@@ -55,6 +55,7 @@ let bar = foo()
 alert(bar())
 ```
 
+<br>
 전개 문법
 
 ```ts
@@ -62,6 +63,7 @@ let arr: number[] = [1, 2, 3, 4]
 arr = [...arr, 5, 6, 7] //[1,2,3,4,5,6,7]
 ```
 
+<br>
 나머지 매개변수
 
 ```ts
@@ -82,6 +84,8 @@ let [name, , age] = ['leesky', true, 23]
 console.log(name, age) //good!
 ```
 
+<br>
+
 ```ts
 //객체 비구조화 할당
 let obj = {
@@ -95,6 +99,8 @@ let obj = {
 let { name, age, sayHi } = obj
 sayHi(name, age) //good!
 ```
+
+<br>
 
 ```ts
 let hello_module: { letsHello: (nameArr: string[]) => void } = {

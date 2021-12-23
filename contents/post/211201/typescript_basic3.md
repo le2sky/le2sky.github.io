@@ -56,6 +56,8 @@ function getStringNum(num: number): string {
 }
 ```
 
+<br>
+
 명시적으로 반환 값을 설정하지 않는 함수는 undefined를 반환하기에
 Typescript에서는 void를 명시한다.
 
@@ -71,6 +73,8 @@ let foo = function (name) {
 }
 ```
 
+<br>
+
 하지만 명시적으로 함수에 설정 가능한 타입을 정의하고자 하면
 다음과 같이 작성할 수 있다.
 
@@ -84,6 +88,7 @@ foo = function (name) {
 }
 ```
 
+<br>
 변수에 명시적 타입 설정, 함수 값 할당 구문을 별도로 안나누고 한번에 정의가능
 
 ```ts
@@ -92,6 +97,7 @@ let foo: (name: string) => string = function (name) {
 }
 ```
 
+<br>
 ES6 화살표 함수 식을 사용하면 다음과 같이 기술할 수 있다.
 
 ```ts
@@ -133,6 +139,7 @@ obj = {
 */
 ```
 
+<br>
 객체의 각 속성 타입을 명시하려면 아래와 같이 하면 된다.
 
 ```ts
@@ -149,6 +156,7 @@ let obj: {
 }
 ```
 
+<br>
 하지만 타입으로 설정되지 않은 객체의 속성을 새롭게 추가할 경우
 에러가 난다.
 
@@ -157,6 +165,7 @@ let obj: {
 obj.newFunction = function () {}
 ```
 
+<br>
 새롭게 추가할 newFucntion 프로퍼티를 타입에 추가하면 되지만,
 매번 하기에는 번거롭다. 따라서 아래와 같이 하면 쉽게 프로퍼티를
 추가할 수 있다.
@@ -180,7 +189,7 @@ obj.newFunction = function () {
 }
 ```
 
-### 6. null/ undefined 타입
+### 6. null / undefined 타입
 
 Javascript에서 null, undefiend도 데이터 타입이자 하나의 값으로 취급된다.
 Typescript에서도 하나의 타입으로 처리되며 다음과 같이 사용한다.
@@ -190,6 +199,7 @@ let nullable: null = null
 let undefinedabe: undefined = undefined
 ```
 
+<br>
 하지만 null로 명시적 타입이 설정된 변수에 null이 아닌 값이 할당되면
 오류가 난다.
 
@@ -233,6 +243,7 @@ function infiniteAnimate(): never{
 
 ```
 
+<br>
 never 타입을 지정한 변수에 never가 아닌 타입은 할당할 수 없다.
 
 ```ts
@@ -308,6 +319,7 @@ let assertion: any = 'leesky'
 let assertion_count: number = (<string>assertion).length
 ```
 
+<br>
 2. `as` 문법 사용하기
 
 ```ts

@@ -38,8 +38,8 @@ module.exports = {
           formats: ['auto', 'webp'],
           quality: 100,
           placegolder: 'blurred',
-        }
-      }
+        },
+      },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-image`,
@@ -47,7 +47,7 @@ module.exports = {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
         siteUrl: 'https://le2sky.github.io/',
-        stripQueryString: true
+        stripQueryString: true,
       },
     },
     `gatsby-plugin-sitemap`,
@@ -55,7 +55,7 @@ module.exports = {
       resolve: `gatsby-plugin-robots-txt`,
       options: {
         policy: [{ userAgent: '*', allow: '/' }],
-      }
+      },
     },
     {
       resolve: `gatsby-transformer-remark`,
@@ -68,9 +68,9 @@ module.exports = {
             },
           },
           {
-            resolve: 'gatsby-remark-prismjs',
+            resolve: 'gatsby-remark-highlight-code',
             options: {
-              classPrefix: 'language-',
+              theme: 'material',
             },
           },
           {
