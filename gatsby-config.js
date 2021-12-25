@@ -1,7 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `le2sky' tech blog🚀`,
-    description: `저의 경험과 지식을 보관하는 블로그입니다👀`,
+    title: `Haneul Lee devlog📚`,
+    description: `안녕하세요, 주니어 백엔드 개발자 이하늘입니다. 이 곳은 저의 경험과 지식을 보관하는 공간입니다.👀 문제를 해결하는 새로운 관점과 아이디어를 위해서는 자신의 생각을
+    정리하는 공간이 필요하다고 생각해서 블로그를 시작하게 되었습니다. 주로 제가 흥미를 느끼는 것들과 최근에 했던 생각들에 대해서 작성합니다.😃`,
     author: `le2sky`,
     siteUrl: `https://le2sky.github.io/`,
   },

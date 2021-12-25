@@ -1,5 +1,4 @@
 import React, { FunctionComponent, useMemo } from 'react'
-import Introduction from 'components/Main/Introduction'
 import CategoryList, { CategoryListProps } from 'components/Main/CategoryList'
 import { graphql } from 'gatsby'
 import { PostListItemType } from 'types/PostItem.types'
@@ -39,10 +38,7 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
       siteMetadata: { title, description, siteUrl },
     },
     allMarkdownRemark: { edges },
-    file: {
-      childImageSharp: { gatsbyImageData },
-      publicURL,
-    },
+    file: { publicURL },
   },
 }) {
   const parsed: ParsedQuery<string> = queryString.parse(search)
@@ -82,7 +78,6 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
       url={siteUrl}
       image={publicURL}
     >
-      <Introduction profileImage={gatsbyImageData} />
       <CategoryList
         selectedCategory={selectedCategory}
         categoryList={categoryList}
@@ -125,9 +120,6 @@ export const getPostList = graphql`
       }
     }
     file(name: { eq: "Profile-image" }) {
-      childImageSharp {
-        gatsbyImageData(width: 200, height: 200)
-      }
       publicURL
     }
   }

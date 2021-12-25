@@ -1,5 +1,5 @@
-import React, { FunctionComponent } from "react";
-import styled from "@emotion/styled";
+import React, { FunctionComponent } from 'react'
+import styled from '@emotion/styled'
 
 const FooterWrapper = styled.footer`
   display: grid;
@@ -10,16 +10,16 @@ const FooterWrapper = styled.footer`
   text-align: center;
   line-height: 1.5;
   @media (max-width: 768px) {
-      font-size: 13px;
+    font-size: 13px;
   }
 `
 
 const Footer: FunctionComponent = function () {
-    return (
-        <FooterWrapper>
-            Thanks for visiting! have a nice day😎
-            <br />@ 2021 le2sky, Powered By Gatsby.
-        </FooterWrapper>
-    )
+  return (
+    <FooterWrapper>
+      Thanks for visiting! have a nice day😎
+      <br />@ 2021 le2sky, Powered By Gatsby.
+    </FooterWrapper>
+  )
 }
-export default Footer;
+export default Footer

@@ -1,25 +1,25 @@
-import styled from "@emotion/styled";
-import React, { FunctionComponent } from "react";
+import styled from '@emotion/styled'
+import React, { FunctionComponent } from 'react'
 
-
-type HeaderProps = {
-    title: string
+type TitleProps = {
+  title: string
 }
 
-const HeaderWrapper = styled.div`
-    width:768px;
-    margin: 20px auto 0 auto;
-    font-size: 22px;
-    font-weight:500;
+const TitleWrapper = styled.div`
+  width: 768px;
+  margin: 0 auto;
+  font-size: 25px;
+  font-weight: 700;
+  color: black;
+  @media (max-width: 768px) {
+    width: 100%;
+    font-size: 20px;
+    padding: 0 20px;
+  }
 `
 
-
-const Header: FunctionComponent<HeaderProps> = function ({ title }) {
-    return (
-        <HeaderWrapper>
-            {title}
-        </HeaderWrapper>
-    );
+const Title: FunctionComponent<TitleProps> = function ({ title }) {
+  return <TitleWrapper>{title}</TitleWrapper>
 }
 
-export default Header;
+export default Title

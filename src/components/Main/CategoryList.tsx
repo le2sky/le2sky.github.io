@@ -1,37 +1,35 @@
-import styled from "@emotion/styled";
-import { Link } from "gatsby";
-import React, { FunctionComponent, ReactNode } from "react";
+import styled from '@emotion/styled'
+import { Link } from 'gatsby'
+import React, { FunctionComponent, ReactNode } from 'react'
 
 export type CategoryListProps = {
-    selectedCategory: string
-    categoryList: {
-        [key: string]: number
-    }
+  selectedCategory: string
+  categoryList: {
+    [key: string]: number
+  }
 }
 
 type CategoryItemProps = {
-    active: boolean;
+  active: boolean
 }
 
 type GatsbyLinkProps = {
-    children: ReactNode;
-    className?: string;
-    to: string;
-} & CategoryListProps;
-
+  children: ReactNode
+  className?: string
+  to: string
+} & CategoryListProps
 
 const CategoryListWrapper = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    width: 768px;
-    margin: 50px auto 0;
-    @media (max-width: 768px) {
-        width: 100%;
-        margin-top: 25px;
-        padding: 0 20px;
-    }
+  display: flex;
+  flex-wrap: wrap;
+  width: 768px;
+  margin: 70px auto 0;
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-top: 50px;
+    padding: 0 20px;
+  }
 `
-
 
 /*
 to, rest 매개변수를 전달하는 Link를 반환하는 익명 컴포넌트인데 active, to, ...rest를 props로 받음
@@ -51,40 +49,38 @@ styled(({active, to, ...rest를 props으로 받는 익명 컴포넌트}) => (<Li
 
 //eslint-disable-next-line @typescript-eslint/no-unused-vars
 const CategoryItem = styled(({ active, to, ...props }: GatsbyLinkProps) => (
-    <Link to={to} {...props} />
-)) <CategoryItemProps>`
-    margin-right: 20px;
-    padding: 5px 0;
-    font-size: 18px;
-    font-weight: ${({ active }) => (active ? '800' : '400')};
-    cursor: pointer;
-    
-    &:last-of-type {
-        margin-right: 0px;
-    }
-    @media (max-width: 768px) {
-        font-size: 15px;
-    }
-
+  <Link to={to} {...props} />
+))<CategoryItemProps>`
+  margin-right: 20px;
+  padding: 5px 0;
+  font-size: 18px;
+  font-weight: ${({ active }) => (active ? '800' : '400')};
+  cursor: pointer;
+  &:last-of-type {
+    margin-right: 0px;
+  }
+  @media (max-width: 768px) {
+    font-size: 15px;
+  }
 `
 
 const CategoryList: FunctionComponent<CategoryListProps> = function ({
-    selectedCategory,
-    categoryList,
+  selectedCategory,
+  categoryList,
 }) {
-    return (
-        <CategoryListWrapper>
-            {Object.entries(categoryList).map(([name, count]) => (
-                <CategoryItem
-                    to={`/?category=${name}`}
-                    active={name === selectedCategory}
-                    key={name}
-                >
-                    #{name}({count})
-                </CategoryItem>
-            ))}
-        </CategoryListWrapper>
-    );
+  return (
+    <CategoryListWrapper>
+      {Object.entries(categoryList).map(([name, count]) => (
+        <CategoryItem
+          to={`/?category=${name}`}
+          active={name === selectedCategory}
+          key={name}
+        >
+          #{name}({count})
+        </CategoryItem>
+      ))}
+    </CategoryListWrapper>
+  )
 }
 
-export default CategoryList;
+export default CategoryList

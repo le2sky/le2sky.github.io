@@ -1,16 +1,22 @@
-import { FunctionComponent, useState } from 'react'
+import {
+  AppBar,
+  CssBaseline,
+  IconButton,
+  Toolbar,
+  Typography,
+  useScrollTrigger,
+} from '@mui/material'
+import { FunctionComponent, ReactElement, useState } from 'react'
+import React from 'react'
 import styled from '@emotion/styled'
+import MenuIcon from '@mui/icons-material/Menu'
 
 //icons
-import MenuIcon from '@mui/icons-material/Menu'
 import GitIcon from '@mui/icons-material/GitHub'
 import InstaIcon from '@mui/icons-material/Instagram'
-import MailIcon from '@mui/icons-material/Mail'
-import InfoIcon from '@mui/icons-material/Info'
 import PostIcon from '@mui/icons-material/Book'
-import CloseIcon from '@mui/icons-material/Close'
 import PortIcon from '@mui/icons-material/Person'
-
+import InfoIcon from '@mui/icons-material/Info'
 //meterial
 import Box from '@mui/material/Box'
 import Drawer from '@mui/material/Drawer'
@@ -19,57 +25,53 @@ import Divider from '@mui/material/Divider'
 import ListItem from '@mui/material/ListItem'
 import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
-import { IconButton } from '@mui/material'
-import Snackbar from '@mui/material/Snackbar'
-import Slide from '@mui/material/Slide'
 import { Link } from 'gatsby'
+import SearchAppBar from './Search'
 
-function TransitionUp(props: any) {
-  return <Slide {...props} direction="up" />
-}
-
-const HeaderWrapper = styled.header`
+const SearchAndSideButtonWraaper = styled.div`
   display: flex;
   flex-direction: row;
+  padding-left: 10px;
 `
-const LinkWrapper = styled.div`
-  margin-left: auto;
-  margin-right: 10px;
+
+const ContentWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 52px;
+  @media (max-width: 768px) {
+    height: 40px;
+  }
 `
-const Header: FunctionComponent = () => {
+
+type ElevationProps = {
+  window?: () => Window
+  children?: ReactElement
+}
+
+const ElevationScroll: FunctionComponent<ElevationProps> = function (
+  props: ElevationProps,
+) {
+  const { children, window } = props
+  const trigger = useScrollTrigger({
+    disableHysteresis: true,
+    threshold: 0,
+    target: window ? window() : undefined,
+  })
+  return React.cloneElement(children as ReactElement, {
+    elevation: trigger ? 4 : 0,
+  })
+}
+
+const ElevateAppBar: FunctionComponent<ElevationProps> = function (
+  props: ElevationProps,
+) {
   const [state, setState] = useState(false)
-
-  //snack bar open state
-  const [open, setOpen] = useState(false)
-
-  //snack bar handler
-  const handleClick = () => {
-    setOpen(true)
-  }
-
-  const handleClose = () => {
-    setOpen(false)
-  }
-
-  //snack bar action
-  const action = (
-    <div>
-      <IconButton
-        size="small"
-        aria-label="close"
-        color="inherit"
-        onClick={handleClose}
-      >
-        <CloseIcon fontSize="small" />
-      </IconButton>
-    </div>
-  )
-
   //side menu
   const toggleButton = () => {
     setState(!state)
   }
-
   const list = () => (
     <Box sx={{ width: 250 }} role="presentation">
       <List>
@@ -120,29 +122,35 @@ const Header: FunctionComponent = () => {
     </Box>
   )
   return (
-    <HeaderWrapper>
-      <IconButton onClick={toggleButton}>{<MenuIcon />}</IconButton>
-      <Drawer open={state} onClose={toggleButton}>
-        {list()}
-      </Drawer>
-      <LinkWrapper>
-        <IconButton href="https://github.com/le2sky">{<GitIcon />}</IconButton>
-        <IconButton href="https://www.instagram.com/lee.___.sky/">
-          {<InstaIcon />}
-        </IconButton>
-        <IconButton onClick={handleClick}>{<MailIcon />}</IconButton>
-      </LinkWrapper>
-      <Snackbar
-        open={open}
-        onClose={handleClose}
-        TransitionComponent={TransitionUp}
-        message="le2sky@kakao.com"
-        key={TransitionUp ? TransitionUp.name : ''}
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-        action={action}
-      />
-    </HeaderWrapper>
+    <header>
+      <CssBaseline />
+      <ElevationScroll {...props}>
+        <AppBar sx={{ backgroundColor: 'white' }}>
+          <ContentWrapper>
+            <SearchAndSideButtonWraaper>
+              <IconButton onClick={toggleButton}>
+                {<MenuIcon sx={{ color: 'black' }} />}
+              </IconButton>
+              <SearchAppBar />
+            </SearchAndSideButtonWraaper>
+            <Drawer open={state} onClose={toggleButton}>
+              {list()}
+            </Drawer>
+            <Typography
+              sx={{
+                color: 'black',
+                fontWeight: '500',
+                paddingRight: '20px',
+                fontSize: '20px',
+              }}
+            >
+              Haneul Lee 🌜
+            </Typography>
+          </ContentWrapper>
+        </AppBar>
+      </ElevationScroll>
+    </header>
   )
 }
 
-export default Header
+export default ElevateAppBar
