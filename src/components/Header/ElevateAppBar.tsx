@@ -40,9 +40,6 @@ const ContentWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   height: 52px;
-  @media (max-width: 768px) {
-    height: 40px;
-  }
 `
 
 type ElevationProps = {
@@ -144,7 +141,7 @@ const ElevateAppBar: FunctionComponent<ElevationProps> = function (
                 fontSize: '20px',
               }}
             >
-              Haneul Lee 🌜
+              Haneul Lee Devlog🌜
             </Typography>
           </ContentWrapper>
         </AppBar>

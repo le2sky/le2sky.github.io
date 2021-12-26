@@ -23,10 +23,9 @@ const CategoryListWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   width: 768px;
-  margin: 70px auto 0;
+  margin: 60px auto 0;
   @media (max-width: 768px) {
     width: 100%;
-    margin-top: 50px;
     padding: 0 20px;
   }
 `
@@ -51,16 +50,31 @@ styled(({active, to, ...rest를 props으로 받는 익명 컴포넌트}) => (<Li
 const CategoryItem = styled(({ active, to, ...props }: GatsbyLinkProps) => (
   <Link to={to} {...props} />
 ))<CategoryItemProps>`
-  margin-right: 20px;
-  padding: 5px 0;
-  font-size: 18px;
+  margin-right: 15px;
+  margin-top: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  padding: 7px;
+  border-radius: 15px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+  transition: 0.3s box-shadow;
+  font-size: 15px;
   font-weight: ${({ active }) => (active ? '800' : '400')};
+  color: ${({ active }) => (active ? 'rgba(0,100,255,0.8)' : 'black')};
+  border: ${({ active }) =>
+    active ? '1px solid rgba(0,100,255,0.8)' : '1px solid rgba(0, 0, 0, 0.5)'};
   cursor: pointer;
   &:last-of-type {
     margin-right: 0px;
   }
   @media (max-width: 768px) {
     font-size: 15px;
+    margin-right: 10px;
+    margin-top: 5px;
+  }
+  &:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    color: rgba(0, 100, 255, 0.8);
+    border: 1px solid rgba(0, 100, 255, 0.8);
   }
 `
 
@@ -76,7 +90,7 @@ const CategoryList: FunctionComponent<CategoryListProps> = function ({
           active={name === selectedCategory}
           key={name}
         >
-          #{name}({count})
+          {name}({count})
         </CategoryItem>
       ))}
     </CategoryListWrapper>
