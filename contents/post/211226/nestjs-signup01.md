@@ -71,7 +71,7 @@ private async sendMemberJoinEmail(
 <br>
 emailService.sendMemberJoinVerification 함수는 nodemailer 와 naver smtp 를 이용해서 사용자에게
 인증 이메일을 발송하는 함수입니다. sendMemberJoinEmail 함수는 외부에서 노출되는 걸 방지하기 위해서
-클래스 내부에서 private로 은닉화 시킵니다. emailService에 대한 자세한 생략을 글의 분량을 위해서 생략
+클래스 내부에서 private로 은닉화 시킵니다. emailService에 대한 자세한 내용은 글의 분량을 위해서 생략
 하도록 하겠습니다. response 값은 '이메일이 발송되었습니다' 혹은 "이메일 전송 오류!"를 전달하도록 작동됩니다.
 
 <br><br>
