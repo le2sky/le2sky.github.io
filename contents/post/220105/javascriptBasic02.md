@@ -1,5 +1,5 @@
 ---
-date: '2021-12-26'
+date: '2022-01-05'
 title: 'JS 스터디 2주차 - 후기'
 categories: ['WEMADinJS']
 summary: 'JAVASCRIPT 스터디 WEMAD 2주차 발표 후기에 대해 작성했습니다.'
