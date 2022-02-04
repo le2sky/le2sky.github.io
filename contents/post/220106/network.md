@@ -43,7 +43,7 @@ keyword: tcp, reliable, in-order, byte-stream data transfer, flow control, conge
 
 연결지향 데이터 전송 서비스인 TCP와 대조적으로 비연결 지향 서비스인 UDP가 있습니다. 내맘대로 데이터가 터지든 말든.. 관계없이 그냥 보내면 되는 경우 UDP를 사용한다고 표현하셨습니다..ㅎㅎ
 
-> UDP(User Datagram Protocol)은 흐름제어 혼잡제어을 안해주고 TCP에 비해신뢰성이 부족한 비연결 지향서비스이다. 데이터 유실을 감당할 수 있는 경우 UDP를 사용할 수 있다. 컴퓨팅 리소스, 네트워크 리소스를 줄일 수 있다. 예로는 streaming media, 원격 회의, dns, internet telephony등 이 있습니다.
+> UDP(User Datagram Protocol)은 흐름제어 혼잡제어을 안해주고 TCP에 비해 신뢰성이 부족한 비연결 지향서비스입니다. 데이터 유실을 감당할 수 있는 경우 UDP를 사용할 수 있습니다. 컴퓨팅 리소스, 네트워크 리소스를 줄일 수 있다. 예로는 streaming media, 원격 회의, dns, internet telephony등 이 있습니다.
 
 ```
 keyword: connectionless, unreliable data transter, no flow control, no congestion control
