@@ -1,36 +1,34 @@
-import styled from "@emotion/styled";
-import { Link } from "gatsby";
-import React, { FunctionComponent } from "react";
-import { PostFrontmatterType } from "types/PostItem.types";
-import { GatsbyImage } from 'gatsby-plugin-image';
-
-
+import styled from '@emotion/styled'
+import { Link } from 'gatsby'
+import React, { FunctionComponent } from 'react'
+import { PostFrontmatterType } from 'types/PostItem.types'
+// import { GatsbyImage } from 'gatsby-plugin-image'
 
 type PostItemProps = PostFrontmatterType & { link: string }
 
-
 const PostItemWrapper = styled(Link)`
-    dispaly:flex;
-    flex-direction: column;
-    border-radius: 10px;
-    box-shadow: 0 0 8px rgba(0,0,0,0.15);
-    transition: 0.3s box-shadow;
-    cursor: pointer;
+  dispaly: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+  transition: 0.3s box-shadow;
+  cursor: pointer;
 
-    &:hover {
-        box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    }
+  &:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  //
 `
-const ThumbnailImage = styled(GatsbyImage)`
-    width: 100%;
-    height: 200px;
-    border-radius: 10px 10px 0 0;
-`
+// const ThumbnailImage = styled(GatsbyImage)`
+//   width: 250px;
+//   height: 250px;
+//   border-radius: 10px 10px 0 0;
+// `
 const PostItemContent = styled.div`
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    padding: 15px
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
 `
 
 const Title = styled.div`
@@ -60,13 +58,15 @@ const Category = styled.div`
 `
 
 const CategoryItem = styled.div`
-  margin: 2.5px 5px;
-  padding: 3px 5px;
-  border-radius: 3px;
-  background: black;
-  font-size: 14px;
+  margin: 2.5px;
+  background: white;
+  font-size: 12px;
   font-weight: 700;
-  color: white;
+  color: black;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  padding: 0px 7px;
+  font-weight: 400;
+  border-radius: 15px;
 `
 
 const Summary = styled.div`
@@ -82,32 +82,30 @@ const Summary = styled.div`
   opacity: 0.8;
 `
 
-
 const PostItem: FunctionComponent<PostItemProps> = function ({
-    title,
-    date,
-    categories,
-    summary,
-    thumbnail: {
-        childImageSharp: { gatsbyImageData }
-    },
-    link,
+  title,
+  date,
+  categories,
+  summary,
+  thumbnail: {
+    childImageSharp: { gatsbyImageData },
+  },
+  link,
 }) {
-    return (
-        <PostItemWrapper to={link}>
-            <ThumbnailImage image={gatsbyImageData} alt="Post Item Image" />
-            <PostItemContent>
-                <Title>{title}</Title>
-                <Date>{date}</Date>
-                <Category>
-                    {categories.map(category => (
-                        <CategoryItem key={category}>{category}</CategoryItem>
-                    ))}
-                </Category>
-                <Summary>{summary}</Summary>
-            </PostItemContent>
-        </PostItemWrapper>
-    );
+  return (
+    <PostItemWrapper to={link}>
+      <PostItemContent>
+        <Title>{title}</Title>
+        <Date>{date}</Date>
+        <Category>
+          {categories.map(category => (
+            <CategoryItem key={category}>{category}</CategoryItem>
+          ))}
+        </Category>
+        <Summary>{summary}</Summary>
+      </PostItemContent>
+    </PostItemWrapper>
+  )
 }
 
-export default PostItem;
+export default PostItem
