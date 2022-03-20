@@ -1,5 +1,5 @@
-import React, { FunctionComponent } from "react";
-import { Global, css } from "@emotion/react";
+import React, { FunctionComponent } from 'react'
+import { Global, css } from '@emotion/react'
 
 const defaultStyle = css`
   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap');
@@ -8,14 +8,14 @@ const defaultStyle = css`
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Noto Sans KR', sans-serif;  
+    font-family: 'Noto Sans KR', sans-serif;
   }
   html,
   body,
   #___gatsby {
     height: 100%;
   }
-  
+
   html:: -webkit-scrollbar {
     display: none;
   }
@@ -32,6 +32,4 @@ const GlobalStyle: FunctionComponent = function () {
   return <Global styles={defaultStyle} />
 }
 
-export default GlobalStyle;
-
-
+export default GlobalStyle

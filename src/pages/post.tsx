@@ -6,6 +6,8 @@ import PostList from 'components/Main/PostList'
 import { IGatsbyImageData } from 'gatsby-plugin-image'
 import queryString, { ParsedQuery } from 'query-string'
 import Template from 'components/Common/Template'
+import Introduction from 'components/Main/Introduction'
+import Selector from 'components/Common/Selector'
 
 type PostPageProps = {
   location: {
@@ -38,7 +40,10 @@ const PostPage: FunctionComponent<PostPageProps> = function ({
       siteMetadata: { title, description, siteUrl },
     },
     allMarkdownRemark: { edges },
-    file: { publicURL },
+    file: {
+      publicURL,
+      childImageSharp: { gatsbyImageData },
+    },
   },
 }) {
   const parsed: ParsedQuery<string> = queryString.parse(search)
@@ -78,6 +83,8 @@ const PostPage: FunctionComponent<PostPageProps> = function ({
       url={siteUrl}
       image={publicURL}
     >
+      <Introduction profileImage={gatsbyImageData} />
+      <Selector type={'post'} />
       <CategoryList
         selectedCategory={selectedCategory}
         categoryList={categoryList}
@@ -120,6 +127,9 @@ export const getPostList = graphql`
       }
     }
     file(name: { eq: "Profile-image" }) {
+      childImageSharp {
+        gatsbyImageData(width: 200, height: 200)
+      }
       publicURL
     }
   }

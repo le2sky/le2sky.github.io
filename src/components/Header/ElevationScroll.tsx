@@ -16,8 +16,8 @@ export const ElevationScroll: FunctionComponent<ElevationProps> = function (
     threshold: 0,
     target: window ? window() : undefined,
   })
-  console.log(trigger)
   return React.cloneElement(children as ReactElement, {
     elevation: trigger ? 4 : 0,
+    backgroundColor: 'black',
   })
 }

@@ -9,11 +9,11 @@ export type CategoryListProps = {
   }
 }
 
-type CategoryItemProps = {
+export type CategoryItemProps = {
   active: boolean
 }
 
-type GatsbyLinkProps = {
+export type GatsbyLinkProps = {
   children: ReactNode
   className?: string
   to: string
@@ -23,7 +23,7 @@ const CategoryListWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   width: 768px;
-  margin: 60px auto 0;
+  margin: 30px auto 0;
   @media (max-width: 768px) {
     width: 100%;
     padding: 0 20px;
@@ -75,6 +75,7 @@ const CategoryItem = styled(({ active, to, ...props }: GatsbyLinkProps) => (
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     color: rgba(0, 100, 255, 0.8);
     border: 1px solid rgba(0, 100, 255, 0.8);
+    transition: 0.5s ease all;
   }
 `
 
@@ -86,7 +87,7 @@ const CategoryList: FunctionComponent<CategoryListProps> = function ({
     <CategoryListWrapper>
       {Object.entries(categoryList).map(([name, count]) => (
         <CategoryItem
-          to={`/?category=${name}`}
+          to={`/post/?category=${name}`}
           active={name === selectedCategory}
           key={name}
         >
