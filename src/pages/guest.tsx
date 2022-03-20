@@ -5,9 +5,9 @@ import { IGatsbyImageData } from 'gatsby-plugin-image'
 import Template from 'components/Common/Template'
 import Introduction from 'components/Main/Introduction'
 import Selector from 'components/Common/Selector'
-import styled from '@emotion/styled'
+import CommentWidget from 'components/Post/CommentWidget'
 
-type InfoPageProps = {
+type GuestPageProps = {
   location: {
     search: string
   }
@@ -31,15 +31,7 @@ type InfoPageProps = {
   }
 }
 
-const InformationWrapper = styled.div`
-  width: 768px;
-  height: 900px;
-  margin: 50px auto 0 auto;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
-  border-radius: 10px;
-`
-
-const InfoPage: FunctionComponent<InfoPageProps> = function ({
+const GuestPage: FunctionComponent<GuestPageProps> = function ({
   data: {
     site: {
       siteMetadata: { title, description, siteUrl },
@@ -58,16 +50,16 @@ const InfoPage: FunctionComponent<InfoPageProps> = function ({
       image={publicURL}
     >
       <Introduction profileImage={gatsbyImageData} />
-      <Selector type={'info'} />
-      <InformationWrapper></InformationWrapper>
+      <Selector type={'guest'} />
+      <CommentWidget />
     </Template>
   )
 }
 
-export default InfoPage
+export default GuestPage
 
 export const getPostList = graphql`
-  query getInfoList {
+  query getGuestList {
     site {
       siteMetadata {
         title

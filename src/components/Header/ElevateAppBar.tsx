@@ -8,6 +8,7 @@ import { FunctionComponent, ReactElement, useState } from 'react'
 import React from 'react'
 import styled from '@emotion/styled'
 import HomeIcon from '@mui/icons-material/home'
+import { Link } from 'gatsby'
 
 const SearchAndSideButtonWraaper = styled.div`
   display: flex;
@@ -42,7 +43,7 @@ const ElevationScroll: FunctionComponent<ElevationProps> = function (
     sx: {
       backgroundColor: trigger ? '#292929' : 'white',
       color: trigger ? 'white' : '#292929',
-      transition: 'all 0.4s ease-in-out;',
+      transition: 'all 0.3s ease-in-out;',
     },
   })
 }
@@ -57,19 +58,21 @@ const ElevateAppBar: FunctionComponent<ElevationProps> = function (
       <ElevationScroll {...props}>
         <AppBar>
           <ContentWrapper>
-            <IconButton
-              sx={{
-                color: 'inherit',
-                fontWeight: '500',
-                fontSize: '18px',
-                marginLeft: '15px',
-                '@media (max-width: 768px)': {
-                  marginLeft: '5px',
-                },
-              }}
-            >
-              <HomeIcon />
-            </IconButton>
+            <Link to="/post">
+              <IconButton
+                sx={{
+                  color: 'inherit',
+                  fontWeight: '500',
+                  fontSize: '18px',
+                  marginLeft: '15px',
+                  '@media (max-width: 768px)': {
+                    marginLeft: '5px',
+                  },
+                }}
+              >
+                <HomeIcon />
+              </IconButton>
+            </Link>
           </ContentWrapper>
         </AppBar>
       </ElevationScroll>

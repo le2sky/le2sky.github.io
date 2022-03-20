@@ -6,7 +6,8 @@ import InstaIcon from '@mui/icons-material/Instagram'
 import MailIcon from '@mui/icons-material/Mail'
 
 import { IGatsbyImageData } from 'gatsby-plugin-image'
-import { IconButton } from '@mui/material'
+import { IconButton, Tooltip } from '@mui/material'
+import { Link } from 'gatsby'
 
 const Background = styled.div`
   width: 100%;
@@ -23,7 +24,7 @@ const Wrapper = styled.div`
 
   @media (max-width: 768px) {
     width: 100%;
-    height: 270px;
+    height: 300px;
     padding: 0 20px;
   }
 `
@@ -89,19 +90,31 @@ const Introduction: FunctionComponent<IntroductionProps> = function ({
           </TitleContainer>
         </MainContentsWrapper>
         <IconWrapper>
-          <IconButton size="large" aria-label="github">
-            <GitIcon fontSize="inherit" />
-          </IconButton>
-          <IconButton size="large" aria-label="instagram">
-            <InstaIcon fontSize="inherit" />
-          </IconButton>
-          <IconButton size="large" aria-label="mail">
-            <MailIcon fontSize="inherit" />
-          </IconButton>
+          <Link to="https://github.com/le2sky">
+            <Tooltip title="github">
+              <IconButton size="large" aria-label="github">
+                <GitIcon fontSize="inherit" />
+              </IconButton>
+            </Tooltip>
+          </Link>
+
+          <Link to="https://www.instagram.com/lee.___.sky/">
+            <Tooltip title="instagram">
+              <IconButton size="large" aria-label="instagram">
+                <InstaIcon fontSize="inherit" />
+              </IconButton>
+            </Tooltip>
+          </Link>
+
+          <Tooltip title="le2sky@kakao.com">
+            <IconButton size="large" aria-label="mail">
+              <MailIcon fontSize="inherit" />
+            </IconButton>
+          </Tooltip>
         </IconWrapper>
       </Wrapper>
     </Background>
   )
 }
 
-export default memo(Introduction)
+export default Introduction

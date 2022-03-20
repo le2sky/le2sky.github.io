@@ -20,7 +20,7 @@ const PostPageTogglesWrapper = styled.div`
 const SelectButton = styled.button`
   ${({ active }) => {
     return css`
-      background-color: #fff;
+      background-color: inherit;
       color: ${active ? 'rgba(0, 100, 255, 0.8)' : 'black'};
       border: none;
       position: relative;
@@ -31,7 +31,7 @@ const SelectButton = styled.button`
       cursor: pointer;
       transition: 0.3s ease all;
       outline: none;
-
+      border-bottom: ${active ? '1px solid rgba(0, 100, 255, 0.8)' : 'none'};
       &:hover {
         color: rgba(0, 100, 255, 0.8);
       }
@@ -47,6 +47,11 @@ const Selector: FunctionComponent = function ({ type }) {
     <PostPageTogglesWrapper>
       <Link to="/post">
         <SelectButton active={type === 'post' ? true : false}>글</SelectButton>
+      </Link>
+      <Link to="/guest">
+        <SelectButton active={type === 'guest' ? true : false}>
+          방명록
+        </SelectButton>
       </Link>
       <Link to="/info">
         <SelectButton active={type === 'info' ? true : false}>
