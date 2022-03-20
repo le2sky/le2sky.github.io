@@ -7,6 +7,12 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        icon: 'src/assets/images/icon.png',
+      },
+    },
+    {
       resolve: 'gatsby-plugin-typescript',
       options: {
         isTSX: true,
@@ -37,7 +43,7 @@ module.exports = {
         defaults: {
           formats: ['auto', 'webp'],
           quality: 100,
-          placegolder: 'blurred',
+          placeholder: 'blurred',
         },
       },
     },
