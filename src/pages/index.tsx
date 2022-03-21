@@ -101,8 +101,8 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
         <Fab
           sx={{
             position: 'fixed',
-            bottom: '95%',
-            left: '0',
+            bottom: '94%',
+            left: '1%',
             marginLeft: '5px',
           }}
           variant="extended"
