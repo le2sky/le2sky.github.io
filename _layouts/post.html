@@ -30,17 +30,17 @@ layout: compress
 
   {% include navbar.html %}
   <div class="wrapper post">
-    <main class="page-content" aria-label="Content">
-      <article itemscope itemtype="https://schema.org/BlogPosting">
+    <main class="post-main" aria-label="Content">
+      <article class="post-article" itemscope itemtype="https://schema.org/BlogPosting">
 
         <header class="header">
           {% if page.tags and page.tags != empty %}
           <div class="tags">
-            {% assign tags = page.tags %}
+              {% assign tags = page.tags %}
             <span itemprop="keywords">
               {% for tag in tags %}
               <a class="tag"
-                href="/tags/#{{tag | downcase | slugify}}">{{tag | upcase }}</a>{% unless forloop.last %},{% endunless %}
+                href="{{ '/archive/' | relative_url }}?view=tags#tag-{{ tag | slugify }}">{{tag | upcase }}</a>{% unless forloop.last %},{% endunless %}
               {% endfor %}
             </span>
           </div>
@@ -54,8 +54,8 @@ layout: compress
             <span itemprop="author" itemscope itemtype="https://schema.org/Person">
               <span itemprop="name">{{ site.author.name }}</span>
             </span>
-            <time hidden datetime="{{ page.modified | date_to_xmlschema }}" itemprop="dateModified">
-              {{ page.date | date: "%b %d, %Y" }}
+            <time hidden datetime="{{ page.modified | default: page.date | date_to_xmlschema }}" itemprop="dateModified">
+              {{ page.modified | default: page.date | date: "%b %d, %Y" }}
             </time>
             <span hidden itemprop="publisher" itemtype="Person">{{ site.author.name }}</span>
             <span hidden itemprop="image">{{ page.image }}</span>
@@ -64,15 +64,24 @@ layout: compress
           {% endif %}
         </header>
 
-        <div class="page-content" itemprop="articleBody">
-          {% include anchor_headings.html html=content anchorClass="anchor-head" beforeHeading=true h_min=1 h_max=4 %}
-          {% if page.tweet %}
-          <p>Comments this article on 
-            <a href="https://twitter.com/{{site.twitter}}/status/{{page.tweet}}">Twitter</a>.
-          </p>
-          {% endif %}
+        <div class="post-content-layout">
+          <div class="page-content post-body" itemprop="articleBody">
+            {% include anchor_headings.html html=content anchorClass="anchor-head" beforeHeading=true h_min=1 h_max=4 %}
+            {% if page.tweet %}
+            <p>Comments this article on 
+              <a href="https://twitter.com/{{site.twitter}}/status/{{page.tweet}}">Twitter</a>.
+            </p>
+            {% endif %}
+          </div>
         </div>
       </article>
+
+      <aside class="post-toc" aria-label="Table of contents" data-post-toc hidden>
+        <div class="post-toc-inner">
+          <p class="post-toc-title">CONTENTS</p>
+          <nav class="post-toc-nav" data-post-toc-nav></nav>
+        </div>
+      </aside>
     
       {% if page.comments %}
         {% include comments.html %}
@@ -80,15 +89,13 @@ layout: compress
 
     </main>
 
-    {% if page.modified %}
-      <small class="post-updated-at">updated_at {{page.modified | date: "%d-%m-%Y"}}</small>
-    {% endif %}
     {% if page.next or page.previous %}
       {% include navigation.html %}
     {% endif %}
 
     {% include footer.html %}
   </div>
+  <script src="{{ '/assets/js/post-toc.js' | relative_url }}" defer="defer"></script>
 </body>
 
 </html>

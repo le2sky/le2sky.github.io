@@ -87,6 +87,26 @@ body[data-theme="dark"] {
     }
   }
 
+  .post-toc-title,
+  .post-toc-link {
+    color: $dark-gray;
+  }
+
+  .post-toc-nav {
+    border-color: $dark-light;
+  }
+
+  .post-toc-link {
+    &:hover,
+    &:focus {
+      color: $dark-white;
+    }
+
+    &.is-active {
+      color: $dark-white;
+    }
+  }
+
   // Link
   a {
     color: inherit;
@@ -243,5 +263,55 @@ body[data-theme="dark"] {
         color: rgba(128,128,128,0.8);
       }
     }
+  }
+
+  .archive-view-toggle {
+    border-color: rgba(255, 255, 255, 0.08);
+    background-color: rgba(255, 255, 255, 0.04);
+  }
+
+  .archive-view-toggle::after {
+    background-color: $dark-white;
+  }
+
+  .archive-view-button {
+    color: $dark-text-base-color;
+
+    &:hover,
+    &:focus {
+      color: $dark-white;
+    }
+
+    &.is-active {
+      color: $dark-black;
+    }
+  }
+
+  .archive-tags {
+    .tag-item {
+      color: $dark-text-base-color;
+      border-color: rgba(255, 255, 255, 0.08);
+      background-color: rgba(255, 255, 255, 0.04);
+
+      &:hover,
+      &:focus {
+        color: $dark-white;
+        border-color: rgba(255, 255, 255, 0.18);
+      }
+
+      &.is-active {
+        color: $dark-black;
+        border-color: $dark-white;
+        background-color: $dark-white;
+      }
+    }
+  }
+
+  .tag-archive-empty {
+    color: $dark-gray;
+  }
+
+  .tag-archive-heading {
+    border-color: $dark-light;
   }
 }

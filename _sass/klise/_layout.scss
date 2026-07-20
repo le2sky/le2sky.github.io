@@ -362,6 +362,71 @@
   }
 }
 
+.archive-explorer {
+  margin-bottom: 26px;
+}
+
+.archive-view-toggle {
+  position: relative;
+  display: inline-grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: 100%;
+  max-width: 220px;
+  padding: 3px;
+  border-radius: 999px;
+  border: 1px solid rgba(128, 128, 128, 0.12);
+  background-color: rgba(128, 128, 128, 0.08);
+  overflow: hidden;
+}
+
+.archive-view-toggle::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  bottom: 3px;
+  left: 3px;
+  width: calc(50% - 3px);
+  border-radius: 999px;
+  background-color: $black;
+  transition: transform 0.22s ease;
+}
+
+.archive-view-toggle[data-active-view="tags"]::after {
+  transform: translateX(100%);
+}
+
+.archive-view-button {
+  position: relative;
+  z-index: 1;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: $text-base-color;
+  padding: 7px 12px;
+  font-size: $small-font-size - 1;
+  font-weight: $bold-weight;
+  cursor: pointer;
+  transition: color 0.2s ease, opacity 0.2s ease;
+
+  &:hover,
+  &:focus {
+    color: $black;
+  }
+
+  &.is-active {
+    color: $white;
+  }
+}
+
+.archive-panel[hidden] {
+  display: none;
+}
+
+.archive-group-heading {
+  margin-top: 36px;
+  margin-bottom: 14px;
+}
+
 #search-results {
   text-align: center;
   li {
@@ -371,10 +436,60 @@
 
 .archive-tags {
   height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 20px;
+
   .tag-item {
-    padding: 1px 3px;
-    border-radius: 2px;
-    border: 1px solid rgba(128, 128, 128, 0.1);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(128, 128, 128, 0.14);
     background-color: rgba(128, 128, 128, 0.1);
+    color: $text-base-color;
+    text-decoration: none;
+    font: inherit;
+    font-size: $small-font-size - 1;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      color: $black;
+      border-color: rgba(128, 128, 128, 0.24);
+    }
+
+    &.is-active {
+      color: $white;
+      background-color: $black;
+      border-color: $black;
+    }
+  }
+}
+
+.tag-archive-empty {
+  color: $gray;
+  padding: 18px 0 8px;
+}
+
+.tag-archive-group {
+  margin-top: 12px;
+}
+
+.tag-archive-heading {
+  padding-bottom: 10px;
+  border-bottom: 1px solid $light;
+}
+
+@include media-query($on-mobile) {
+  .archive-view-toggle {
+    width: 100%;
+  }
+
+  .archive-view-button {
+    flex: 1 1 0;
+    text-align: center;
   }
 }

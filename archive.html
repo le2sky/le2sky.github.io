@@ -13,17 +13,103 @@ comments: false
   <input type="search" id="search-input" placeholder="Find some articles here" aria-label="Search">
 </div>
 
+{%- assign sorted_tags = site.tags | sort -%}
+<div class="archive-explorer">
+  <div
+    class="archive-view-toggle"
+    role="tablist"
+    aria-label="Browse archive"
+    data-active-view="years"
+  >
+    <button
+      class="archive-view-button is-active"
+      id="archive-tab-years"
+      type="button"
+      role="tab"
+      aria-selected="true"
+      aria-controls="archive-years"
+      data-archive-view-trigger="years"
+    >
+      By Year
+    </button>
+    <button
+      class="archive-view-button"
+      id="archive-tab-tags"
+      type="button"
+      role="tab"
+      aria-selected="false"
+      aria-controls="archive-tags"
+      data-archive-view-trigger="tags"
+      tabindex="-1"
+    >
+      By Tag
+    </button>
+  </div>
+</div>
+
 <ul id="search-results"></ul>
 
-{%- for post in site.posts -%}
-  {%- capture current_year -%}{{ post.date | date: "%Y" }}{%- endcapture -%}
-  {%- unless current_year == previous_year -%}
-    <h2>{{ current_year }}</h2>
-    {%- assign previous_year = current_year -%}
-  {%- endunless -%}
-  <article class="post-item">
-    <h3 class="post-item-title">
-      <a href="{{ post.url }}">{{ post.title | escape }}</a>
-    </h3> 
-  </article>
-{%- endfor -%}
+<section
+  class="archive-panel is-active"
+  id="archive-years"
+  data-archive-view-panel="years"
+  role="tabpanel"
+  aria-labelledby="archive-tab-years"
+>
+  {%- for post in site.posts -%}
+    {%- capture current_year -%}{{ post.date | date: "%Y" }}{%- endcapture -%}
+    {%- unless current_year == previous_year -%}
+      <h2 class="archive-group-heading">{{ current_year }}</h2>
+      {%- assign previous_year = current_year -%}
+    {%- endunless -%}
+    <article class="post-item">
+      <span class="post-item-date">{{ post.date | date: "%b %d, %Y" }}</span>
+      <h3 class="post-item-title">
+        <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+      </h3>
+    </article>
+  {%- endfor -%}
+</section>
+
+<section
+  class="archive-panel"
+  id="archive-tags"
+  data-archive-view-panel="tags"
+  role="tabpanel"
+  aria-labelledby="archive-tab-tags"
+>
+  <div class="archive-tags">
+    {%- for tag in sorted_tags -%}
+      {%- assign name = tag | first -%}
+      {%- assign slug = name | slugify -%}
+      <button
+        class="tag-item"
+        type="button"
+        data-tag-filter="{{ slug }}"
+        aria-pressed="false"
+      >
+        {{ name | upcase }}
+      </button>
+    {%- endfor -%}
+  </div>
+
+  <div class="tag-archive-empty" data-tag-empty>
+    Select a tag to see related posts.
+  </div>
+
+  {%- for tag in sorted_tags -%}
+    {%- assign name = tag | first -%}
+    {%- assign slug = name | slugify -%}
+    <section class="tag-archive-group" id="tag-{{ slug }}" data-tag-panel="{{ slug }}" hidden>
+      <h2 class="tag-archive-heading">{{ name | upcase }}</h2>
+      {%- for post in site.tags[name] -%}
+        <article class="post-item">
+          <span class="post-item-date">{{ post.date | date: "%b %d, %Y" }}</span>
+          <h3 class="post-item-title">
+            <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+          </h3>
+        </article>
+      {%- endfor -%}
+    </section>
+  {%- endfor -%}
+</section>

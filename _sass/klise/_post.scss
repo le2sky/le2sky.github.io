@@ -1,9 +1,54 @@
+$post-body-size: $wide-size - ($spacing-full * 2);
+$post-toc-width: 252px;
+$post-toc-gap: ($wide-size - $post-body-size) / 2;
+$post-layout-size: $post-body-size + (($post-toc-width + $post-toc-gap) * 2);
+$post-toc-breakpoint: $post-body-size + (($post-toc-width + $post-toc-gap) * 2);
+
 // Post wrapper
 .wrapper.post {
+  max-width: -webkit-calc(#{$wide-size} - (#{$spacing-full} * 2));
+  max-width: calc(#{$wide-size} - (#{$spacing-full} * 2));
+
+  .header {
+    margin-top: 5.6em;
+  }
+
   @include media-query($on-mobile) {
     padding-left: $spacing-half;
     padding-right: $spacing-half;
   }
+}
+
+.wrapper.page {
+  max-width: -webkit-calc(#{$wide-size} - (#{$spacing-full} * 2));
+  max-width: calc(#{$wide-size} - (#{$spacing-full} * 2));
+}
+
+.post-main { padding-top: 8px; }
+
+.post-article {
+  max-width: $post-body-size;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post-content-layout {
+  position: relative;
+  min-width: 0;
+}
+
+.post-body {
+  min-width: 0;
+
+  h1,
+  h2,
+  h3 {
+    scroll-margin-top: 110px;
+  }
+}
+
+.post-toc {
+  display: none;
 }
 
 // Post title
@@ -191,10 +236,100 @@
   }
 }
 
+@media screen and (min-width: $on-widescreen) {
+  .post-main {
+    position: relative;
+  }
+}
+
+@media screen and (min-width: $post-toc-breakpoint) {
+  .wrapper.post {
+    max-width: -webkit-calc(#{$post-layout-size} - (#{$spacing-full} * 2));
+    max-width: calc(#{$post-layout-size} - (#{$spacing-full} * 2));
+  }
+
+  .post-main {
+    display: grid;
+    grid-template-columns: $post-toc-width $post-toc-gap minmax(0, $post-body-size) $post-toc-gap $post-toc-width;
+  }
+
+  .post-article {
+    grid-column: 3;
+    max-width: none;
+    min-width: 0;
+  }
+
+  .post-toc {
+    display: block;
+    grid-column: 5;
+    width: $post-toc-width;
+    position: relative;
+  }
+
+  .post-toc-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-left: 48px;
+    box-sizing: border-box;
+  }
+
+  .post-main > *:not(.post-article):not(.post-toc) {
+    grid-column: 1 / -1;
+  }
+
+  .post-toc-title {
+    margin: 4px 0 14px;
+    color: $gray;
+    font-size: $small-font-size - 2;
+    font-weight: $bold-weight;
+    letter-spacing: 0.14em;
+  }
+
+  .post-toc-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-left: 16px;
+    border-left: 1px solid $light;
+  }
+
+  .post-toc-link {
+    display: block;
+    color: $gray;
+    font-size: $small-font-size - 2;
+    line-height: 1.45;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover,
+    &:focus {
+      color: $black;
+    }
+
+    &.is-active {
+      color: $black;
+      font-weight: $bold-weight;
+    }
+  }
+
+  .post-toc-h2 {
+    padding-left: 12px;
+  }
+
+  .post-toc-h3 {
+    padding-left: 24px;
+  }
+}
+
 .post-nav {
   display: flex;
   position: relative;
+  max-width: $post-body-size;
   margin-top: 5em;
+  margin-left: auto;
+  margin-right: auto;
   border-top: 1px solid $light;
   line-height: 1.4;
 
