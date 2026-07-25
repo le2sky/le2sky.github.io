@@ -509,6 +509,10 @@
   &:focus {
     border-color: rgba(128, 128, 128, 0.22);
     background-color: rgba(128, 128, 128, 0.08);
+
+    .elsewhere-mention-title {
+      color: $black;
+    }
   }
 }
 
@@ -546,9 +550,9 @@
 
 .elsewhere-mention-title {
   min-width: 0;
-  font-size: $base-font-size;
-  font-weight: $bold-weight;
-  color: $black;
+  font-size: $small-font-size - 1;
+  font-weight: $normal-weight;
+  color: $text-base-color;
   line-height: 1.25;
 }
 

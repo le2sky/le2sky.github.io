@@ -2,7 +2,7 @@
 title: 지속가능한 SW 개발을 위한 코드리뷰
 date: 2023-01-11
 modified: 2023-01-11
-tags: [code-review]
+tags: [swe]
 description: 지속가능한 SW 개발을 위한 코드리뷰
 image: ""
 ---

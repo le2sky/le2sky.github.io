@@ -107,6 +107,13 @@ body[data-theme="dark"] {
     }
   }
 
+  .footnote-preview {
+    border-color: rgba($dark-white, 0.08);
+    background: rgba(27, 29, 37, 0.96);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.38);
+    color: $dark-text-base-color;
+  }
+
   // Link
   a {
     color: inherit;
@@ -323,6 +330,10 @@ body[data-theme="dark"] {
     &:focus {
       border-color: rgba(255, 255, 255, 0.16);
       background-color: rgba(255, 255, 255, 0.08);
+
+      .elsewhere-mention-title {
+        color: $dark-white;
+      }
     }
   }
 
@@ -332,7 +343,7 @@ body[data-theme="dark"] {
   }
 
   .elsewhere-mention-title {
-    color: $dark-white;
+    color: $dark-text-base-color;
   }
 
 }

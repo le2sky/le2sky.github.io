@@ -327,6 +327,7 @@ sup {
 table {
   width: 100%;
   margin-top: $spacing-half;
+  margin-bottom: $spacing-full - 10;
   border-collapse: collapse;
   font-size: $small-font-size;
 
@@ -341,6 +342,16 @@ table {
   tr {
     border: 1px solid $light;
     padding: 2px 7px;
+  }
+
+  th,
+  td {
+    text-align: center !important;
+    vertical-align: middle;
+  }
+
+  th {
+    font-weight: $bold-weight;
   }
 }
 

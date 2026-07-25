@@ -2,7 +2,7 @@
 title: 쿠폰 발급 API로 알아보는 동시성 문제 해결 방법
 date: 2024-11-18
 modified: 2024-11-18
-tags: [java]
+tags: [jvm]
 description: 쿠폰 발급 API로 알아보는 동시성 문제 해결 방법
 image: ""
 ---

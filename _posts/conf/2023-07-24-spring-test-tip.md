@@ -2,7 +2,7 @@
 title: 실무에서 적용하는 테스트 코드 작성 방법과 노하우
 date: 2023-07-24
 modified: 2023-07-24
-tags: [java]
+tags: [jvm]
 description: 실무에서 적용하는 테스트 코드 작성 방법과 노하우
 image: ""
 ---

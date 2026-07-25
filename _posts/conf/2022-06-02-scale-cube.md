@@ -2,7 +2,7 @@
 title: The Scale Cube, 세 가지 관점의 규모 확장성 모델
 date: 2022-06-02
 modified: 2022-06-02
-tags: [architecture]
+tags: [swe]
 description: The Scale Cube, 세 가지 관점의 규모 확장성 모델
 image: ""
 ---
