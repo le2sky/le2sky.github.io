@@ -42,8 +42,8 @@
 
     var url = new URL(window.location.href);
 
-    if (view === "tags") {
-      url.searchParams.set("view", "tags");
+    if (view === "tags" || view === "elsewhere") {
+      url.searchParams.set("view", view);
     } else {
       url.searchParams.delete("view");
     }
@@ -116,7 +116,11 @@
 
   var params = new URLSearchParams(window.location.search);
   var requestedView = params.get("view");
-  var initialView = requestedView === "tags" || currentHashTargetsTags() ? "tags" : "years";
+  var initialView = requestedView === "elsewhere"
+    ? "elsewhere"
+    : requestedView === "tags" || currentHashTargetsTags()
+      ? "tags"
+      : "years";
   var initialTag = getTagFromHash();
 
   setActiveView(initialView, {
@@ -137,6 +141,10 @@
       });
 
       if (view === "years" && tagPanels.length) {
+        setActiveTag("", { skipUrlUpdate: true });
+      }
+
+      if (view === "elsewhere" && tagPanels.length) {
         setActiveTag("", { skipUrlUpdate: true });
       }
     });

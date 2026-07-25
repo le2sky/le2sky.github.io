@@ -314,4 +314,25 @@ body[data-theme="dark"] {
   .tag-archive-heading {
     border-color: $dark-light;
   }
+
+  .elsewhere-mention {
+    border-color: rgba(255, 255, 255, 0.08);
+    background-color: rgba(255, 255, 255, 0.04);
+
+    &:hover,
+    &:focus {
+      border-color: rgba(255, 255, 255, 0.16);
+      background-color: rgba(255, 255, 255, 0.08);
+    }
+  }
+
+  .elsewhere-mention-icon {
+    color: $dark-white;
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .elsewhere-mention-title {
+    color: $dark-white;
+  }
+
 }
