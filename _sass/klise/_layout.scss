@@ -531,6 +531,19 @@
   fill: currentColor;
 }
 
+.elsewhere-mention-icon .tistory-mark {
+  width: 18px;
+  height: 18px;
+}
+
+.elsewhere-mention-icon .tistory-bg {
+  fill: #ff5a1f;
+}
+
+.elsewhere-mention-icon .tistory-dot {
+  fill: #fff;
+}
+
 .elsewhere-mention-title {
   min-width: 0;
   font-size: $base-font-size;
