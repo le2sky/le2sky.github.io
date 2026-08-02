@@ -40,16 +40,37 @@ $post-toc-breakpoint: $post-body-size + (($post-toc-width + $post-toc-gap) * 2);
 .post-body {
   min-width: 0;
 
-  &.claude-code-in-action ul:not(.task-list) {
-    list-style-type: disc;
+  &.claude-code-in-action {
+    ul:not(.task-list) {
+      list-style-type: disc;
 
-    li::before {
-      content: none;
+      li::before {
+        content: none;
+      }
+
+      li::marker {
+        color: currentColor;
+        font-size: 0.7em;
+      }
     }
 
-    li::marker {
-      color: currentColor;
-      font-size: 0.7em;
+    ol {
+      list-style-type: decimal;
+      counter-reset: none;
+
+      li {
+        counter-increment: none;
+
+        &::before {
+          content: none;
+        }
+
+        &::marker {
+          color: currentColor;
+          font-size: 0.8em;
+          font-weight: $bold-weight;
+        }
+      }
     }
   }
 
