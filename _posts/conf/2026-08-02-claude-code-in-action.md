@@ -2,7 +2,7 @@
 title: Claude Code In Action
 date: 2026-08-02
 modified: 2026-08-02
-tags: [claude-code]
+tags: [ai]
 description: Claude Code In Action
 image: ""
 article_class: claude-code-in-action

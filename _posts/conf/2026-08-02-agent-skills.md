@@ -1,8 +1,8 @@
 ---
 title: Agent Skills에 대해
-date: 2026-08-02
-modified: 2026-08-02
-tags: [claude-code]
+date: 2026-08-02 23:00:00 +0900
+modified: 2026-08-02 23:00:00 +0900
+tags: [ai]
 description: Agent Skills에 대해
 image: ""
 article_class: agent-skills
@@ -162,7 +162,7 @@ skills: accessibility-audit, performance-check
 	- 내장 에이전트는 Claude Code가 기본으로 제공하는, 특정 작업에 맞게 미리 설정된 서브에이전트다.
 	- 정의된 서브 에이전트의 스킬은 메인 대화처럼 필요에 따라 호출되는 것이 아니라, 서브 에이전트가 시작할 때 로드된다.
 
-## 문제 해결 스킬
+## 스킬 관련 문제 해결
 
 - **스킬 검증 도구(skills validator tool)를 사용**하라. 다른 문제를 디버깅하기 전에 구조적인 문제를 먼저 발견할 수 있다. uv를 사용하면 빠르게 설치 가능
 - **스킬이 트리거되지 않는다면, 대부분 description이 원인**이다. 실제로 요청할 때 사용하는 표현과 일치하는 트리거 문구를 추가하라.
