@@ -40,6 +40,19 @@ $post-toc-breakpoint: $post-body-size + (($post-toc-width + $post-toc-gap) * 2);
 .post-body {
   min-width: 0;
 
+  &.claude-code-in-action ul:not(.task-list) {
+    list-style-type: disc;
+
+    li::before {
+      content: none;
+    }
+
+    li::marker {
+      color: currentColor;
+      font-size: 0.7em;
+    }
+  }
+
   h1,
   h2,
   h3 {

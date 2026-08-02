@@ -65,7 +65,7 @@ layout: compress
         </header>
 
         <div class="post-content-layout">
-          <div class="page-content post-body" itemprop="articleBody">
+          <div class="page-content post-body{% if page.article_class %} {{ page.article_class | escape }}{% endif %}" itemprop="articleBody">
             {% include anchor_headings.html html=content anchorClass="anchor-head" beforeHeading=true h_min=1 h_max=4 %}
             {% if page.tweet %}
             <p>Comments this article on 
