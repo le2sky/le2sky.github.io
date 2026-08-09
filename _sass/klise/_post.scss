@@ -40,6 +40,30 @@ $post-toc-breakpoint: $post-body-size + (($post-toc-width + $post-toc-gap) * 2);
 .post-body {
   min-width: 0;
 
+  &.java-performance-tuning {
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    p:has(> img:only-child) {
+      line-height: 0;
+      margin-bottom: 0;
+      padding-bottom: 0;
+      text-align: center;
+    }
+
+    p:has(> img:only-child) + p:has(> em:only-child) {
+      color: $gray;
+      font-size: $small-font-size - 1;
+      line-height: 1.45;
+      margin-top: 0;
+      padding-top: 4px;
+      text-align: center;
+    }
+  }
+
   &.claude-code-in-action,
   &.agent-skills {
     ul:not(.task-list) {
